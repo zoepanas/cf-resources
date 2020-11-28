@@ -1,8 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head></head>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
+  </head>
 
   <body>
-    {% extends "layout.html" %} {% block content %} Forum page {% endblock %}
+    {% extends "layout.html" %} {% block content %}
+    
+    <div>
+      <h2>Community Forum</h2>
+      <p>
+        Ask questions and provide tips to the community on anything
+        fridge-related!
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col-10">
+        <!-- Search form -->
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">
+        <div class="card">
+          <div class="card-header">
+            Filter By
+          </div>
+          <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action">Reaching Out</a>
+            <a href="#" class="list-group-item list-group-item-action">Scheduling</a>
+            <a href="#" class="list-group-item list-group-item-action">Finding Partners</a>
+            <a href="#" class="list-group-item list-group-item-action">Logistics</a>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-7">
+        <div id="posts-header">
+          <button type="button" class="btn btn-primary">Create Post</button>
+        </div>
+
+        <div id="posts">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Anonymous</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Posted 6 hours ago</h6>
+              <p class="card-text">Hi fridge community. How are people fundraising to build shelters for winter?</p>
+              <a href="#" class="card-link">2 comments</a>
+            </div>
+            <hr>
+            <div class="card-body">
+              <input type="text" class="form-control" placeholder="Add a comment...">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {% endblock %}
   </body>
 </html>
