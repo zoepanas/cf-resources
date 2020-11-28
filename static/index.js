@@ -1,4 +1,4 @@
-// filler file
+// function to show guides
 
 $(document).ready(function () {
   $("#templates-link").click(function () {

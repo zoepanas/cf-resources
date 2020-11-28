@@ -1,0 +1,25 @@
+.key-resource {
+  padding: 2rem;
+  font-size: 20px;
+  margin: 2rem;
+  background-color: papayawhip;
+}
+
+.header-block {
+  border-radius: 6px;
+  background-color: #c4c4c4;
+  content: center;
+  margin: 4rem 4rem 4rem 4rem;
+  padding: 4rem;
+}
+
+.author-box {
+  width: 100px;
+  height: 100px;
+  margin-left: 3rem;
+}
+
+.guide-img {
+  width: 200px;
+  height: 200px;
+}
