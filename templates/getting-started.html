@@ -1,9 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head></head>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
+
+    <style>
+      .gs-section{
+        padding-bottom: 20px;
+      }
+
+      .gs-section-subheader{
+        font-size: 16px;
+      }
+
+      .gs-section-header{
+        font-size: 25px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
 
   <body>
-    {% extends "layout.html" %} {% block content %} Getting Started page {%
-    endblock %}
+    {% extends "layout.html" %} {% block content %}
+
+    <div>
+      <h2>Getting Started</h2>
+      <p>
+        We welcome you to the community fridge resource guide! See an 
+        overview of our mission, who we are, and some key resources 
+        to get started with.
+      </p>
+    </div>
+
+    <div class="gs-section">
+      <div class="gs-section-subheader">Overview</div>
+      <div class="gs-section-header">Mission</div>
+      <div>
+        We've compiled these resources by the community for the 
+        community to keep sustaining our community fridge network. 
+        We hope this living document will be a space for community 
+        fridges to learn how to establish relationships with food 
+        producers that have shared values and shared commitment to 
+        the community.
+      </div>
+    </div>
+
+    <div class="gs-section">
+      <div class="gs-section-subheader">Who We Are</div>
+      <div class="gs-section-header">The Team</div>
+      <div>
+        We're a group of students from New York City who recognized 
+        the difficulties that fridges were facing in different areas, 
+        with no centralized way to keep track of resources. Feel free 
+        to contact us at sj2472@columbia.edu if you want to connect!
+      </div>
+    </div>
+
+    <div class="gs-section">
+      <div class="gs-section-subheader">Get Started</div>
+      <div class="gs-section-header">Key Resources</div>
+      <div class="row">
+        <div class="col-4">
+          <div class="row">
+            Forum
+          </div>
+          <div class="row">
+            Ask questions and provide tips to the community
+          </div>
+          <div class="row">
+            <button type="button" class="btn btn-outline-primary">See More</button>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="row">
+            Templates
+          </div>
+          <div class="row">
+            Templates for reaching out, flyers, brochures, etc. made by the community
+          </div>
+          <div class="row">
+            <button type="button" class="btn btn-outline-primary">See More</button>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="row">
+            Guides
+          </div>
+          <div class="row">
+            Outlines key places to reach out to for food source partnerships
+          </div>
+          <div class="row">
+            <button type="button" class="btn btn-outline-primary">See More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endblock %}
   </body>
 </html>

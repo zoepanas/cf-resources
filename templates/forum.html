@@ -2,6 +2,13 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="../static/forum.js"></script>
   </head>
 
   <body>
@@ -39,7 +46,17 @@
       </div>
       <div class="col-7">
         <div id="posts-header">
-          <button type="button" class="btn btn-primary">Create Post</button>
+          <button id="create-post-btn" type="button" class="btn btn-primary">Create Post</button>
+        </div>
+
+        <div id="create-post">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Create a Post</h5>
+              <input id="new-post-txt" type="text" class="form-control" placeholder="What's on your mind?">
+              <button id="post-btn" type="button" class="btn btn-outline-primary">Post</button>
+            </div>
+          </div>
         </div>
 
         <div id="posts">
