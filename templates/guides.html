@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
     <link
       rel="stylesheet"
       href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
-    <script src="../static/index.js"></script>
     <script src="../static/guides.js"></script>
     <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/guides.css" />
 
     <script>
       var guides = {{ guides| tojson}}
@@ -26,16 +19,71 @@
 
   <body>
     {% extends "layout.html" %} {% block content %}
-    <div class="container">
-      <header>Showing All Guides</header>
+    <div class="header-block">Resource Guides</div>
 
-      <div id="guides_list" class="row">
-        {% for g in guides %}
-        <div class="guide-object col-md-3" id="{{g['id']}}">
-          {{g["guide-name"]}}<br />
-          <img src="{{g['image']}}" class="guide-img" alt="" />
+    <div class="row">
+      <div class="col-3">
+        <div class="card">
+          <div class="card-header">Filter By</div>
+          <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action"
+              >The Uptown Fridge</a
+            >
+            <a href="#" class="list-group-item list-group-item-action"
+              >Jamaica Fridge</a
+            >
+            <a href="#" class="list-group-item list-group-item-action"
+              >Mott Haven Fridge</a
+            >
+          </div>
+
+          <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action"
+              >Navigating Obstacles</a
+            >
+            <a href="#" class="list-group-item list-group-item-action"
+              >Food Waste</a
+            >
+            <a href="#" class="list-group-item list-group-item-action"
+              >Food Sources</a
+            >
+          </div>
         </div>
-        {% endfor %}
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <input
+            class="form-control col-md-8"
+            type="text"
+            placeholder="Search for a guide..."
+            aria-label="Search"
+          />
+          <button
+            id="add-guide-btn"
+            type="button"
+            class="btn btn-primary col-md-2"
+          >
+            Add Guide
+          </button>
+        </div>
+
+        <div class="sort-row row">
+          <h4 class="col-md-2">Sort by</h4>
+          <div class="col-md-2 guides-tag">Tag1</div>
+          <div class="col-md-2 guides-tag">Tag2</div>
+        </div>
+
+        <div id="guides" class="row">
+          {% for g in guides %}
+          <div class="card">
+            <div class="card-body guide-object" id="{{g['id']}}">
+              <h5 class="card-title">{{g["guide-name"]}}</h5>
+              <img src="{{g['image']}}" class="guide-img" alt="" />
+            </div>
+            <hr />
+          </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
 
