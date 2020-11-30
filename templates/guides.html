@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="https://use.fontawesome.com/0b04c030ef.js"></script>
     <link
       rel="stylesheet"
       href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
@@ -20,6 +21,33 @@
   <body>
     {% extends "layout.html" %} {% block content %}
     <div class="header-block">Resource Guides</div>
+    <div class="row">
+      <div class="input-icons">
+        <i class="fa fa-search icon"></i>
+        <input
+          class="search-bar"
+          id="guide-search-term"
+          size="60"
+          placeholder="Search for a guide..."
+        /><br />
+      </div>
+
+      <button
+        id="search-guide-btn"
+        type="button"
+        class="btn btn-primary guides-btn"
+      >
+        Search
+      </button>
+
+      <button
+        id="add-guide-btn"
+        type="button"
+        class="btn btn-primary guides-btn"
+      >
+        Add Guide
+      </button>
+    </div>
 
     <div class="row">
       <div class="col-3">
@@ -65,26 +93,6 @@
         </div>
       </div>
       <div class="col-md-8">
-        <div class="row">
-          <input id="guide-search-term" size="60" placeholder="Search" /><br />
-
-          <button
-            id="search-guide-btn"
-            type="button"
-            class="btn btn-primary col-md-2"
-          >
-            Search
-          </button>
-
-          <button
-            id="add-guide-btn"
-            type="button"
-            class="btn btn-primary col-md-2"
-          >
-            Add Guide
-          </button>
-        </div>
-
         <div class="sort-row row">
           <h4 class="col-md-2">Sort by</h4>
           <div class="col-md-2 guides-tag">Most Popular</div>

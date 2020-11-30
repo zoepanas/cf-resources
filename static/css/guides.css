@@ -1,3 +1,6 @@
+body {
+  color: #5a6d6d;
+}
 .guides-tag {
   border-radius: 1rem;
   border: 1px solid teal;
@@ -10,4 +13,27 @@
 .sort-row {
   vertical-align: middle;
   margin: 1rem 0 1rem 0;
+}
+
+.search-bar {
+  border-radius: 0.5rem;
+  border: 0px;
+  background-color: #eff5f5;
+  padding: 0.5rem 0 0.5rem 2.5rem;
+  color: #797979;
+}
+
+.input-icons i {
+  position: absolute;
+  color: #797979;
+}
+
+.icon {
+  padding: 0.7rem 0 1rem 1rem;
+  min-width: 40px;
+}
+
+.guides-btn {
+  background-color: #5da0a2;
+  color: white;
 }
