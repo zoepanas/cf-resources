@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="../static/guides.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/guides.css" />
+  </head>
+
+  <body>
+    {% extends "layout.html" %} {% block content %}
+    <div class="header-block">Add a Guide</div>
+
+    <div class="row">
+      <label for="guide_name">Guide Name: </label>
+      <input
+        id="guide_name"
+        size="60"
+        placeholder="Guide Name (i.e., how to reach out to restaurants)"
+      /><br />
+    </div>
+    <br /><br />
+
+    <div class="row">
+      <label for="guide_image">Link to Corresponding Image: </label>
+      <input
+        id="guide_image"
+        size="60"
+        placeholder="Guide Image (i.e., link to Instagram post of fridge)"
+      /><br />
+    </div>
+    <br /><br />
+
+    <div class="row">
+      <label for="guide_link">Link to Guide: </label>
+      <input
+        id="guide_link"
+        size="60"
+        placeholder="Guide Link (i.e., Google doc)"
+      /><br />
+    </div>
+    <br /><br />
+
+    <div class="row">
+      <label for="contributor">Your Name/Fridge Name: </label>
+      <input id="contributor" size="60" placeholder="Name" /><br />
+    </div>
+    <br /><br />
+
+    <div class="row">
+      <label for="email">Your Email: </label>
+      <input id="email" size="60" placeholder="Email" /><br />
+    </div>
+    <br /><br />
+
+    <button id="submit-guide-btn">Submit Guide</button>
+
+    {% endblock %}
+  </body>
+</html>

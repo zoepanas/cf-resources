@@ -5,6 +5,7 @@ import re
 app = Flask(__name__)
 
 # guides db (currently local)
+current_id = 4
 guides = [
     {
         "id": 1,
@@ -73,6 +74,34 @@ def guides_page():
 def forum():
    return render_template('forum.html')
 
+@app.route('/add-guide')
+def add_guide():
+   return render_template('add-guide.html')
+
+@app.route('/submit-guide', methods=['GET', 'POST'])
+def submit_guide():
+   global guides
+   global current_id
+
+   json_data = request.get_json()
+   guide_name = json_data["guide_name"]
+   link = json_data["link"]
+   image = json_data["image"]
+   contributor = json_data["contributor"]
+   email = json_data["email"]
+   current_id = current_id + 1
+   new_guide = {
+      "id": current_id,
+      "guide-name": guide_name,
+      "guide-link": link,
+      "image": image,
+      "email": email,
+      "author-name": contributor,
+      }
+   guides.append(new_guide)
+   return jsonify(guides = guides, current_id=current_id)
+
+# below route loads blog posts (not currently in use)
 @app.route('/view-guide/<id>', methods=['GET', 'POST'])
 def view_guide(id=None):
    global guides
