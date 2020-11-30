@@ -10,6 +10,10 @@ function add_guide() {
   submit_guide(guide);
 }
 
+var search_guides = function (term) {
+  window.location.href = `/search?s=${term}`;
+};
+
 var submit_guide = function (guide) {
   var guide_to_add = {
     guide_name: guide[0],
@@ -26,11 +30,6 @@ var submit_guide = function (guide) {
     data: JSON.stringify(guide_to_add),
     success: function (result) {
       console.log("added guide!");
-      /*var updated_guides = result["guides"];
-      restaurants = updated_restaurants;
-      current_id = curr_id;
-      render_success(current_id);
-      */
     },
     error: function (request, status, error) {
       console.log("Error");
@@ -53,5 +52,10 @@ $(document).ready(function () {
 
   $("#submit-guide-btn").click(function () {
     add_guide();
+  });
+
+  $("#search-guide-btn").click(function () {
+    var search_term = $("#guide-search-term").val();
+    search_guides(search_term);
   });
 });

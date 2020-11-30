@@ -23,8 +23,10 @@
 
     <div class="row">
       <div class="col-3">
+        <h2>Filter By</h2>
+
         <div class="card">
-          <div class="card-header">Filter By</div>
+          <div class="card-header">FRIDGE</div>
           <div class="list-group list-group-flush">
             <a href="#" class="list-group-item list-group-item-action"
               >The Uptown Fridge</a
@@ -36,15 +38,27 @@
               >Mott Haven Fridge</a
             >
           </div>
+        </div>
 
+        <div class="card">
+          <div class="card-header">TOPIC</div>
           <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action"
+            <a
+              id="navigating-obstacles"
+              href="#"
+              class="list-group-item list-group-item-action guide-topic"
               >Navigating Obstacles</a
             >
-            <a href="#" class="list-group-item list-group-item-action"
+            <a
+              id="food-waste"
+              href="#"
+              class="list-group-item list-group-item-action guide-topic"
               >Food Waste</a
             >
-            <a href="#" class="list-group-item list-group-item-action"
+            <a
+              id="food-sources"
+              href="#"
+              class="list-group-item list-group-item-action guide-topic"
               >Food Sources</a
             >
           </div>
@@ -52,12 +66,16 @@
       </div>
       <div class="col-md-8">
         <div class="row">
-          <input
-            class="form-control col-md-8"
-            type="text"
-            placeholder="Search for a guide..."
-            aria-label="Search"
-          />
+          <input id="guide-search-term" size="60" placeholder="Search" /><br />
+
+          <button
+            id="search-guide-btn"
+            type="button"
+            class="btn btn-primary col-md-2"
+          >
+            Search
+          </button>
+
           <button
             id="add-guide-btn"
             type="button"
@@ -69,8 +87,8 @@
 
         <div class="sort-row row">
           <h4 class="col-md-2">Sort by</h4>
-          <div class="col-md-2 guides-tag">Tag1</div>
-          <div class="col-md-2 guides-tag">Tag2</div>
+          <div class="col-md-2 guides-tag">Most Popular</div>
+          <div class="col-md-2 guides-tag">Most Recent</div>
         </div>
 
         <div id="guides" class="row">

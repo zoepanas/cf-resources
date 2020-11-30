@@ -78,6 +78,26 @@ def forum():
 def add_guide():
    return render_template('add-guide.html')
 
+@app.route('/search', methods=['GET'])
+def search(term=None):
+    global restaurants
+    global current_id
+
+    term = (request.args.get('s', default="", type=str)).lower()
+    results = []
+
+    # loop through restaurants to see which contain keyword and add these to results
+    for g in guides:
+        g_name = (g["guide-name"].lower())
+        id = str(g["id"])
+
+        if term in g_name:
+            results.append(g)
+
+    return render_template('guides.html', guides=results)
+
+
+# below function is used to add a guide given information from user
 @app.route('/submit-guide', methods=['GET', 'POST'])
 def submit_guide():
    global guides
