@@ -76,9 +76,11 @@
         <div id="guides" class="row">
           {% for g in guides %}
           <div class="card">
-            <div class="card-body guide-object" id="{{g['id']}}">
-              <h5 class="card-title">{{g["guide-name"]}}</h5>
-              <img src="{{g['image']}}" class="guide-img" alt="" />
+            <div class="card-body guide-object" value="{{g['guide-link']}}">
+              <h5 class="card-title">
+                {{g["guide-name"]}} link: {{g['guide_link']}}
+              </h5>
+              <img src="{{g['image']}}" class="guide-img" alt="{{g['alt']}}" />
             </div>
             <hr />
           </div>
