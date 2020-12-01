@@ -82,7 +82,7 @@ def index():
    return render_template('index.html')
 
 @app.route('/getting-started')
-def templates():
+def getting_started():
    return render_template('getting-started.html')
 
 @app.route('/templates')
