@@ -48,6 +48,33 @@ guides = [
         "guide-link": "https://drive.google.com/file/d/0ByNpGtZ0hcfaSUNEbFZpLXJKVW8/view",    
     },]
 
+templates = [
+   {
+      "id": 1,
+      "author-name": "Percy Jackson",
+      "author-title": "Son of Posidon",
+      "author-photo": "https://vignette.wikia.nocookie.net/heroes-villains-and-antiheroes/images/1/10/Percy_Jackson.jpg/revision/latest/window-crop/width/200/x-offset/0/y-offset/0/window-width/1200/window-height/1200?cb=20190708185854",
+      "alt": "Photo of fridge",
+      "template-name": "Reaching Out to Food Resources",
+   },
+   {
+      "id": 2,
+      "author-name": "Grover Underwood",
+      "author-title": "Satyr",
+      "author-photo": "https://static.wikia.nocookie.net/olympians/images/c/c1/Grover_Underwood.jpg/revision/latest?cb=20170220200452",
+      "alt": "Photo of fridge",
+      "template-name": "Reaching Out to Non-Profits",
+   },
+   {
+      "id": 3,
+      "author-name": "Piper McLean",
+      "author-title": "Daughter of Aphrodite",
+      "author-photo": "https://static.wikia.nocookie.net/olympians/images/2/22/Piper_McLean.jpg/revision/latest?cb=20170220201323",
+      "alt": "Photo of fridge",
+      "template-name": "Applying for Funding",
+   }
+]
+
 # routes
 
 @app.route('/')
@@ -60,7 +87,9 @@ def templates():
 
 @app.route('/templates')
 def templates_page():
-   return render_template('templates.html')
+   global templates
+   templates = templates
+   return render_template('templates.html', templates=templates)
 
 @app.route('/guides')
 def guides_page():
