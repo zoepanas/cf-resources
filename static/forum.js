@@ -3,7 +3,7 @@ var create_post = function (txt){
 
     /*var card = $("<div class='card'>")
     var card_body = $("<div class='card-body></div>")
-    var title = $("<h5 class='card-title'>"+"You"+"</h5>")
+    var title = $("<h5 class='card-title'></h5>").text("You")
     var subtitle = $("<h6 class='card-subtitle mb-2 text-muted'>"+"Posted just now"+"</h6>")
     var card_txt = $("<p class='card-text'>"+txt+"</p>")
 
@@ -21,7 +21,15 @@ var create_post = function (txt){
 
     $("#new-post-txt").val("")
     $("#create-post").hide()
-    $("#posts").prepend("<div>"+txt+"</div>")
+    $("#posts").prepend(
+        "<div class='card'>"+
+            "<div class='card-body'>"+
+                "<h5 class='card-title'>You</h5>"+
+                "<h6 class='card-subtitle mb-2 text-muted'>Posted just now</h6>"+
+                "<p class='card-text'>"+txt+"</p>"+
+            "</div>"+
+        "</div>"
+    )
 
 }
 
