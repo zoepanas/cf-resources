@@ -20,7 +20,17 @@
 
   <body>
     {% extends "layout.html" %} {% block content %}
-    <div class="header-block">Resource Guides</div>
+    <div class="header-block row">
+      <div class="col-md-5">
+        <h2 class="in-h-block">Resource Guides</h2>
+        <p class="in-h-block">
+          We’ve compiled a list of resources for community fridges, and creating
+          this website to share them with the community!
+        </p>
+      </div>
+      <div class="col-md-5"></div>
+    </div>
+
     <div class="row">
       <div class="input-icons">
         <i class="fa fa-search icon"></i>
@@ -32,19 +42,11 @@
         /><br />
       </div>
 
-      <button
-        id="search-guide-btn"
-        type="button"
-        class="btn btn-primary guides-btn"
-      >
+      <button id="search-guide-btn" type="button" class="btn btn-info">
         Search
       </button>
 
-      <button
-        id="add-guide-btn"
-        type="button"
-        class="btn btn-primary guides-btn"
-      >
+      <button id="add-guide-btn" type="button" class="btn btn-info">
         Add Guide
       </button>
     </div>
@@ -103,9 +105,7 @@
           {% for g in guides %}
           <div class="card">
             <div class="card-body guide-object" value="{{g['guide-link']}}">
-              <h5 class="card-title">
-                {{g["guide-name"]}} link: {{g['guide_link']}}
-              </h5>
+              <h5 class="card-title">{{g["guide-name"]}}</h5>
               <img src="{{g['image']}}" class="guide-img" alt="{{g['alt']}}" />
             </div>
             <hr />

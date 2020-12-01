@@ -37,3 +37,7 @@ body {
   background-color: #5da0a2;
   color: white;
 }
+
+.btn {
+  margin-left: 1rem;
+}

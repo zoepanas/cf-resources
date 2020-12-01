@@ -5,7 +5,21 @@
   background-color: papayawhip;
 }
 
+h2.in-header-block {
+  font-family: "Montserrat";
+  font-size: 50px;
+  font-weight: 800;
+  align-items: center;
+}
+
+p.in-header-block {
+  font-family: "Montserrat";
+  font-size: 20px;
+  align-items: center;
+}
+
 .header-block {
+  font-family: "Montserrat";
   border-radius: 6px;
   background-color: #c4c4c4;
   content: center;
@@ -24,6 +38,6 @@
   height: 200px;
 }
 
-.gs-section{
+.gs-section {
   padding-bottom: 20px;
 }
