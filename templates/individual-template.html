@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="../static/css/guides.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="https://use.fontawesome.com/0b04c030ef.js"></script>
+    
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+
+    <script src="../static/templates.js"></script>
+
+    <script>
+      var author_name = {{ author_name| tojson}}
+      var author_title = {{ author_title| tojson}}
+      var author_photo = {{ author_photo| tojson}}
+      var alt = {{ alt| tojson}}
+      var template_name = {{ template_name| tojson}}
+    </script>
+  </head>
+
+  <body>
+    {% extends "layout.html" %} {% block content %}
+    <div class="header-block">{{template_name}}</div>
+    <div class="row">
+      <div class="col-md-2">
+        <img class="author-box" src="{{author_photo}}" alt="{{alt}}" />
+        <br />
+        <p>{{author_name}} -- {{author_title}}</p>
+      </div>
+
+      <div class="col-md-6">words</div>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

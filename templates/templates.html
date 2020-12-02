@@ -11,6 +11,8 @@
       rel="stylesheet"
       href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
+
+    <script src="../static/templates.js"></script>
     
     <script>
       var templates = {{ templates| tojson}}
@@ -79,7 +81,19 @@
           <div class="col-md-2 guides-tag">Most Popular</div>
           <div class="col-md-2 guides-tag">Most Recent</div>
         </div>
+
+        <div id="templates" class="row">
+          {% for t in templates %}
+          <div class="card">
+            <a class="card-body guide-object" href="/view-template/{{t['id']}}">
+              <h5 class="card-title">{{t["template-name"]}}</h5>
+              <img src="{{t['author-photo']}}" class="guide-img" alt="{{t['alt']}}" />
+            </a>
+          </div>
+          {% endfor %}
+        </div>
       </div>
+
     </div>
     
     {% endblock %}
