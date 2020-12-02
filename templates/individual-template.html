@@ -16,13 +16,11 @@
     <script src="../static/templates.js"></script>
 
     <script>
-      var author_name = {{ author_name| tojson}}
-      var author_title = {{ author_title| tojson}}
-      var author_photo = {{ author_photo| tojson}}
       var template_photo = {{ template_photo| tojson}}
       var alt = {{ alt| tojson}}
       var template_name = {{ template_name| tojson}}
       var text = {{ text| tojson}}
+      var input_fields = {{ input_fields| tojson}}
     </script>
   </head>
 
@@ -40,19 +38,26 @@
         </div>
     </div>
 
-    <div class="temp-header row">Template Builder</div> <br>
+    <div class="temp-header row">Template Builder</div>
 
-    <div class="row">
-        {{text}}
-    </div> <br>
-
-    <div class="temp-header row">Customize Template</div> <br>
-
-    <div class="row">
-        <input type="text" placeholder="name" />
+    <div class="temp-header-block row">
+        <div id="template-text"></div>
     </div>
 
-    <button type="button" class="btn btn-info">Customize</button>
+    <div class="temp-header row">Customize Template</div>
+
+    <div class="customize-input-div row">
+        {% for i in input_fields %}
+        <div class="customize-input-col col-4">
+            <label class="customize-label" for="customize-input-field">{{i}}</label> <br>
+            <input class="customize-input-field" type="text" placeholder="{{i}}" />
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="customize-submit row">
+        <button type="button" class="submit-btn btn btn-info">Customize</button>
+    </div>
 
     {% endblock %}
   </body>

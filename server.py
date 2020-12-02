@@ -51,33 +51,27 @@ guides = [
 templates = [
    {
       "id": 1,
-      "author-name": "Percy Jackson",
-      "author-title": "Son of Posidon",
-      "author-photo": "https://vignette.wikia.nocookie.net/heroes-villains-and-antiheroes/images/1/10/Percy_Jackson.jpg/revision/latest/window-crop/width/200/x-offset/0/y-offset/0/window-width/1200/window-height/1200?cb=20190708185854",
       "template-photo": "/static/img/fridge-img.png",
       "alt": "Photo of fridge",
       "template-name": "Reaching Out to Food Resources",
-      "text": "Dear [Business Name], <br><br> I hope you are doing well. My name is [Your Name] and I am writing to you as the organize of [Fridge Name], a community fridge located at [Fridge Location]. A community fridge is a form of mutual aid that... As a local [Business Type] owner, I was hoping that you would be willing to help support the community... <br><br> I look forward to hearing from you soon! <br><br> Best, <br> [Your Name]"
+      "text": "Dear <span class='template-custom-item'>[Business Name]</span>, <br> <br> I hope you are doing well. My name is <span class='template-custom-item'>[Your Name]</span> and I am writing to you as the organizer of <span class='template-custom-item'>[Fridge Name]</span>, a community fridge located at <span class='template-custom-item'>[Fridge Location]</span>. A community fridge is a form of mutual aid that... As a local <span class='template-custom-item'>[Business Type]</span> owner, I was hoping that you would be willing to help support the community... <br> <br> I look forward to hearing from you soon! <br> <br> Best, <br> <span class='template-custom-item'>[Your Name]</span>",
+      "input-fields": ["Business Name", "Your Name", "Fridge Name", "Fridge Location", "Business Type"]
    },
    {
       "id": 2,
-      "author-name": "Grover Underwood",
-      "author-title": "Satyr",
-      "author-photo": "https://static.wikia.nocookie.net/olympians/images/c/c1/Grover_Underwood.jpg/revision/latest?cb=20170220200452",
       "template-photo": "/static/img/fridge-img.png",
       "alt": "Photo of fridge",
       "template-name": "Reaching Out to Non-Profits",
-      "text": "Dear [Business Name], <br><br> I hope you are doing well. My name is [Your Name] and I am writing to you as the organize of [Fridge Name], a community fridge located at [Fridge Location]. A community fridge is a form of mutual aid that... As a local [Business Type] owner, I was hoping that you would be willing to help support the community... <br><br> I look forward to hearing from you soon! <br><br> Best, <br> [Your Name]"
+      "text": "Dear <span class='template-custom-item'>[Business Name]</span>, <br> <br> I hope you are doing well. My name is <span class='template-custom-item'>[Your Name]</span> and I am writing to you as the organizer of <span class='template-custom-item'>[Fridge Name]</span>, a community fridge located at <span class='template-custom-item'>[Fridge Location]</span>. A community fridge is a form of mutual aid that... As a local <span class='template-custom-item'>[Business Type]</span> owner, I was hoping that you would be willing to help support the community... <br> <br> I look forward to hearing from you soon! <br> <br> Best, <br> <span class='template-custom-item'>[Your Name]</span>",
+      "input-fields": ["Business Name", "Your Name", "Fridge Name", "Fridge Location", "Business Type"]
    },
    {
       "id": 3,
-      "author-name": "Piper McLean",
-      "author-title": "Daughter of Aphrodite",
-      "author-photo": "https://static.wikia.nocookie.net/olympians/images/2/22/Piper_McLean.jpg/revision/latest?cb=20170220201323",
       "template-photo": "/static/img/fridge-img.png",
       "alt": "Photo of fridge",
       "template-name": "Applying for Funding",
-      "text": "Dear [Business Name], <br><br> I hope you are doing well. My name is [Your Name] and I am writing to you as the organize of [Fridge Name], a community fridge located at [Fridge Location]. A community fridge is a form of mutual aid that... As a local [Business Type] owner, I was hoping that you would be willing to help support the community... <br><br> I look forward to hearing from you soon! <br><br> Best, <br> [Your Name]"
+      "text": "Dear <span class='template-custom-item'>[Business Name]</span>, <br> <br> I hope you are doing well. My name is <span class='template-custom-item'>[Your Name]</span> and I am writing to you as the organizer of <span class='template-custom-item'>[Fridge Name]</span>, a community fridge located at <span class='template-custom-item'>[Fridge Location]</span>. A community fridge is a form of mutual aid that... As a local <span class='template-custom-item'>[Business Type]</span> owner, I was hoping that you would be willing to help support the community... <br> <br> I look forward to hearing from you soon! <br> <br> Best, <br> <span class='template-custom-item'>[Your Name]</span>",
+      "input-fields": ["Business Name", "Your Name", "Fridge Name", "Fridge Location", "Business Type"]
    }
 ]
 
@@ -187,18 +181,15 @@ def view_template(id=None):
       if t["id"] == index:
          template = t
          break
-   author_name = template["author-name"]
-   author_title = template["author-title"]
-   author_photo = template["author-photo"]
    template_photo = template["template-photo"]
    alt = template["alt"]
    template_name = template["template-name"]
    text = template["text"]
+   input_fields = template["input-fields"]
 
    print(template_name)
     
-   return render_template('individual-template.html', id=id, author_name=author_name, author_title=author_title,
-   author_photo=author_photo, template_photo=template_photo, alt=alt, template_name=template_name, text=text)
+   return render_template('individual-template.html', id=id, template_photo=template_photo, alt=alt, template_name=template_name, text=text, input_fields=input_fields)
 
 if __name__ == '__main__':
    app.run(debug = True)

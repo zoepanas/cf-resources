@@ -2,7 +2,44 @@
     width: 100%;
 }
 
+.temp-header-block {
+    font-family: "Montserrat";
+    border-radius: 6px;
+    background-color: #eff5f5;
+    content: center;
+    margin-bottom: 20px;
+    padding: 2rem;
+    color: #5A6D6D;
+}
+
 .temp-header {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
+    padding-bottom: 20px;
+    color: #5A6D6D;
+}
+
+.customize-input-div {
+    font-family: "Montserrat";
+}
+
+.customize-input-field {
+    border-radius: 0.5rem;
+    border: 0px;
+    background-color: #eff5f5;
+    padding: 0.5rem 0 0.5rem 2.5rem;
+    color: #797979;
+    margin-bottom: 20px;
+}
+
+.customize-submit {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.customize-label {
+    color: #5A6D6D;
+}
+
+.template-custom-item {
 }
