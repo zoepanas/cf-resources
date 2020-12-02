@@ -47,15 +47,24 @@ $(document).ready(function () {
   });
 
   $("#add-guide-btn").click(function () {
-    window.location.href = `/add-guide`;
+    $("#add-guide-modal").show();
   });
 
   $("#submit-guide-btn").click(function () {
-    add_guide();
+    console.log("adding guide");
+    //add_guide();
   });
 
   $("#search-guide-btn").click(function () {
     var search_term = $("#guide-search-term").val();
     search_guides(search_term);
+  });
+
+  $(".close").click(function () {
+    $("#add-guide-modal").hide();
+  });
+
+  $(window).click(function () {
+    $("add-guide-modal").hide();
   });
 });

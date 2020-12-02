@@ -113,6 +113,76 @@
           {% endfor %}
         </div>
       </div>
+
+      <!-- Add Guide Modal -->
+      <div id="add-guide-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content modal-section">
+          <span class="close">&times;</span>
+          <div class="row modal-row">
+            <div class="col-md-3">
+              <div class="row modal-title">
+                <label for="guide-title">Title</label>
+              </div>
+              <div class="row modal-title">
+                <label for="guide-link">Guide Link</label>
+              </div>
+              <div class="row modal-title">
+                <label for="guide-image">Image Link</label>
+              </div>
+              <div class="row modal-title">
+                <label for="fridge-name">Fridge Name</label>
+              </div>
+              <div class="row modal-title">
+                <label for="fridge-email">Email*</label>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="row">
+                <input
+                  id="guide-title"
+                  class="input-bar"
+                  size="40"
+                  placeholder="Name of Guide"
+                />
+              </div>
+              <div class="row">
+                <input
+                  id="guide-link"
+                  size="40"
+                  class="input-bar"
+                  placeholder="Link to Guide (i.e. Google Docs)"
+                />
+              </div>
+              <div class="row">
+                <input
+                  id="guide-image"
+                  size="40"
+                  class="input-bar"
+                  placeholder="Upload or Link to Image (i.e. Instagram Post)"
+                />
+              </div>
+              <div class="row">
+                <input
+                  id="fridge-name"
+                  size="40"
+                  class="input-bar"
+                  placeholder="Fridge Name"
+                />
+              </div>
+              <div class="row">
+                <input
+                  id="fridge-email"
+                  size="40"
+                  class="input-bar"
+                  placeholder="Email"
+                />
+              </div>
+            </div>
+          </div>
+          <button id="submit-guide-btn" class="btn">Submit Guide</button>
+        </div>
+      </div>
     </div>
 
     {% endblock %}
