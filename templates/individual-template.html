@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="../static/css/guides.css" />
     <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/templates.css" />
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
     <script src="https://use.fontawesome.com/0b04c030ef.js"></script>
@@ -18,23 +19,40 @@
       var author_name = {{ author_name| tojson}}
       var author_title = {{ author_title| tojson}}
       var author_photo = {{ author_photo| tojson}}
+      var template_photo = {{ template_photo| tojson}}
       var alt = {{ alt| tojson}}
       var template_name = {{ template_name| tojson}}
+      var text = {{ text| tojson}}
     </script>
   </head>
 
   <body>
     {% extends "layout.html" %} {% block content %}
-    <div class="header-block">{{template_name}}</div>
-    <div class="row">
-      <div class="col-md-2">
-        <img class="author-box" src="{{author_photo}}" alt="{{alt}}" />
-        <br />
-        <p>{{author_name}} -- {{author_title}}</p>
-      </div>
-
-      <div class="col-md-6">words</div>
+    <div class="header-block row">
+        <div class="col-md-5">
+          <h2 class="in-h-block">{{template_name}}</h2>
+          <p class="in-h-block">
+            We’ve compiled a list of resources for community fridges, as well as a tool to build your own template to personalize it!
+          </p>
+        </div>
+        <div class="col-md-7">
+            <img src="{{template_photo}}" class="temp-img">
+        </div>
     </div>
+
+    <div class="temp-header row">Template Builder</div> <br>
+
+    <div class="row">
+        {{text}}
+    </div> <br>
+
+    <div class="temp-header row">Customize Template</div> <br>
+
+    <div class="row">
+        <input type="text" placeholder="name" />
+    </div>
+
+    <button type="button" class="btn btn-info">Customize</button>
 
     {% endblock %}
   </body>
