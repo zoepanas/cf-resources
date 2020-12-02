@@ -1,6 +1,7 @@
 body {
   color: #5a6d6d;
 }
+
 .guides-tag {
   border-radius: 1rem;
   border: 1px solid teal;
@@ -40,4 +41,37 @@ body {
 
 .btn {
   margin-left: 1rem;
+}
+
+.input-bar {
+  border-radius: 0.5rem;
+  border: 0px;
+  background-color: #eff5f5;
+  padding: 0.5rem 0 0.5rem 1rem;
+  color: #797979;
+  margin: 0.5rem 1rem 0.5rem 0.5rem;
+}
+
+.right-btn {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  padding: 0.5rem;
+}
+
+.modal-row {
+  padding: 0 3rem 0 0;
+}
+
+.input-title {
+  margin: 0.5rem 1rem 0.5rem 1rem;
+  padding: 0.5rem 0 0.5rem 1rem;
+  color: #5a6d6d;
+}
+
+.modal-title {
+  font-family: "Montserrat";
+  font-size: 24px;
+  font-weight: 800;
+  color: #5a6d6d;
 }

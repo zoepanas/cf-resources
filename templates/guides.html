@@ -5,6 +5,7 @@
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
     <script src="https://use.fontawesome.com/0b04c030ef.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <link
       rel="stylesheet"
       href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
@@ -20,6 +21,103 @@
 
   <body>
     {% extends "layout.html" %} {% block content %}
+
+    <!-- START: Modal for Adding Guide-->
+    <div class="modal" tabindex="-1" role="dialog" id="add-guide-modal">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Guide</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row modal-row">
+              <div class="col-md-3 modal-col">
+                <div class="row input-title">
+                  <label for="guide-title">Title</label>
+                </div>
+                <div class="row input-title">
+                  <label for="guide-link">Guide Link</label>
+                </div>
+                <div class="row input-title">
+                  <label for="guide-image">Image Link</label>
+                </div>
+                <div class="row input-title">
+                  <label for="fridge-name">Fridge Name</label>
+                </div>
+                <div class="row input-title">
+                  <label for="fridge-email">Email*</label>
+                </div>
+              </div>
+              <div class="col-md-5 modal-col">
+                <div class="row">
+                  <input
+                    id="guide-title"
+                    class="input-bar"
+                    size="40"
+                    placeholder="Name of Guide"
+                  />
+                </div>
+                <div class="row">
+                  <input
+                    id="guide-link"
+                    size="40"
+                    class="input-bar"
+                    placeholder="Link to Guide (i.e. Google Docs)"
+                  />
+                </div>
+                <div class="row">
+                  <input
+                    id="guide-image"
+                    size="40"
+                    class="input-bar"
+                    placeholder="Upload or Link to Image (i.e. Instagram Post)"
+                  />
+                </div>
+                <div class="row">
+                  <input
+                    id="fridge-name"
+                    size="40"
+                    class="input-bar"
+                    placeholder="Fridge Name"
+                  />
+                </div>
+                <div class="row">
+                  <input
+                    id="fridge-email"
+                    size="40"
+                    class="input-bar"
+                    placeholder="Email"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary close"
+              data-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="button" id="submit-guide-btn" class="btn btn-primary">
+              Submit Guide
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- END: Modal for Adding Guide-->
+
     <div class="header-block row">
       <div class="col-md-5">
         <h2 class="in-h-block">Resource Guides</h2>
@@ -104,9 +202,9 @@
         <div id="guides" class="row">
           {% for g in guides %}
           <div class="card">
-            <div class="card-body guide-object" value="{{g['guide-link']}}">
-              <h5 class="card-title">{{g["guide-name"]}}</h5>
-              <img src="{{g['image']}}" class="guide-img" alt="{{g['alt']}}" />
+            <div class="card-body guide-object" value="{{g['link']}}">
+              <img src="{{g['image']}}" class="guide-img" />
+              <h5 class="card-title">{{g["title"]}}</h5>
             </div>
             <hr />
           </div>
