@@ -92,9 +92,9 @@ def guides_page():
 def forum():
    return render_template('forum.html')
 
-@app.route('/search', methods=['GET'])
-def search(term=None):
-    global restaurants
+@app.route('/search-guides', methods=['GET'])
+def search_guides(term=None):
+    global guides
     global current_id
 
     term = (request.args.get('s', default="", type=str)).lower()
@@ -110,32 +110,24 @@ def search(term=None):
 
     return render_template('guides.html', guides=results)
 
+@app.route('/search-templates', methods=['GET'])
+def search_templates(term=None):
+    global templates
+    global current_id
 
-# below function is used to add a guide given information from user
-'''
-@app.route('/submit-guide', methods=['GET', 'POST'])
-def submit_guide():
-   global guides
-   global current_id
+    term = (request.args.get('s', default="", type=str)).lower()
+    results = []
 
-   json_data = request.get_json()
-   guide_name = json_data["name"]
-   link = json_data["link"]
-   image = json_data["image"]
-   contributor = json_data["contributor"]
-   email = json_data["email"]
-   current_id = current_id + 1
-   new_guide = {
-      "id": current_id,
-      "guide-name": guide_name,
-      "guide-link": link,
-      "image": image,
-      "email": email,
-      "author-name": contributor,
-      }
-   guides.append(new_guide)
-   return jsonify(guides = guides, current_id=current_id)
-   '''
+    # loop through restaurants to see which contain keyword and add these to results
+    for t in templates:
+        t_name = (t["template-name"].lower())
+        id = str(t["id"])
+
+        if term in t_name:
+            results.append(t)
+
+    return render_template('templates.html', templates=results)
+
 
 # below route loads blog posts (not currently in use)
 @app.route('/view-guide/<id>', methods=['GET', 'POST'])
