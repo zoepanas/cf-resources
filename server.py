@@ -9,44 +9,34 @@ current_id = 4
 guides = [
     {
         "id": 1,
-        "author-name": "Percy Jackson",
-        "author-title": "Son of Posidon",
-        "author-photo": "https://vignette.wikia.nocookie.net/heroes-villains-and-antiheroes/images/1/10/Percy_Jackson.jpg/revision/latest/window-crop/width/200/x-offset/0/y-offset/0/window-width/1200/window-height/1200?cb=20190708185854",
-        "alt": "Photo of fridge",
-        "guide-name": "Freedge Yourself",
+        "title": "Freedge Yourself",
         "image": "https://cdn.vox-cdn.com/thumbor/q3ekr-86TnFk5nxW4FtPmf-fQwk=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/21940916/heyy_healer_fb.jpg",
-        "guide-link": "https://drive.google.com/file/d/0ByNpGtZ0hcfaSUNEbFZpLXJKVW8/view",
+        "link": "https://drive.google.com/file/d/0ByNpGtZ0hcfaSUNEbFZpLXJKVW8/view",
+        "name": "Freedge",
+        "email": "thisIsAFakeEmail@kmail.com",
     },
     {
         "id": 2,
-        "author-name": "Annabeth Chase",
-        "author-title": "Daughter of Athena",
-        "author-photo": "https://i.pinimg.com/736x/05/0b/04/050b046c58b99a7fe69e2481c4a94675.jpg",
-        "alt": "author's photo",
-        "guide-name": "Finding the Right Bodega for You",
-        "image": "https://wpcdn.us-east-1.vip.tn-cloud.net/www.sactownmag.com/content/uploads/2020/10/121610343_2690149421252095_9180172192574381574_n-1024x1024.jpg",
-        "guide-link": "https://drive.google.com/file/d/0ByNpGtZ0hcfaSUNEbFZpLXJKVW8/view",    
-    },
+        "title": "Freedge Yourself",
+        "image": "https://cdn.vox-cdn.com/thumbor/q3ekr-86TnFk5nxW4FtPmf-fQwk=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/21940916/heyy_healer_fb.jpg",
+        "link": "https://drive.google.com/file/d/0ByNpGtZ0hcfaSUNEbFZpLXJKVW8/view",
+        "name": "Freedge",
+        "email": "thisIsAFakeEmail@kmail.com",},
     {
         "id": 3,
-        "author-name": "Percy Jackson",
-        "author-title": "Son of Posidon",
-        "author-photo": "https://vignette.wikia.nocookie.net/heroes-villains-and-antiheroes/images/1/10/Percy_Jackson.jpg/revision/latest/window-crop/width/200/x-offset/0/y-offset/0/window-width/1200/window-height/1200?cb=20190708185854",
-        "alt": "Photo of fridge",
-        "guide-name": "Freedge Yourself",
+        "title": "Freedge Yourself",
         "image": "https://cdn.vox-cdn.com/thumbor/q3ekr-86TnFk5nxW4FtPmf-fQwk=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/21940916/heyy_healer_fb.jpg",
-        "guide-link": "https://drive.google.com/file/d/0ByNpGtZ0hcfaSUNEbFZpLXJKVW8/view",
-    },
+        "link": "https://drive.google.com/file/d/0ByNpGtZ0hcfaSUNEbFZpLXJKVW8/view",
+        "name": "Freedge",
+        "email": "thisIsAFakeEmail@kmail.com",},
     {
         "id": 4,
-        "author-name": "Annabeth Chase",
-        "author-title": "Daughter of Athena",
-        "author-photo": "https://i.pinimg.com/736x/05/0b/04/050b046c58b99a7fe69e2481c4a94675.jpg",
-        "alt": "author's photo",
-        "guide-name": "Finding the Right Bodega for You",
-        "image": "https://wpcdn.us-east-1.vip.tn-cloud.net/www.sactownmag.com/content/uploads/2020/10/121610343_2690149421252095_9180172192574381574_n-1024x1024.jpg",
-        "guide-link": "https://drive.google.com/file/d/0ByNpGtZ0hcfaSUNEbFZpLXJKVW8/view",    
-    },]
+        "title": "Freedge Yourself",
+        "image": "https://cdn.vox-cdn.com/thumbor/q3ekr-86TnFk5nxW4FtPmf-fQwk=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/21940916/heyy_healer_fb.jpg",
+        "link": "https://drive.google.com/file/d/0ByNpGtZ0hcfaSUNEbFZpLXJKVW8/view",
+        "name": "Freedge",
+        "email": "thisIsAFakeEmail@kmail.com",
+   },]
 
 templates = [
    {
@@ -95,17 +85,12 @@ def templates_page():
 def guides_page():
    global guides
    guides = guides
-   for g in guides:
-      print(g["guide-link"])
+   
    return render_template('guides.html', guides=guides)
 
 @app.route('/forum')
 def forum():
    return render_template('forum.html')
-
-@app.route('/add-guide')
-def add_guide():
-   return render_template('add-guide.html')
 
 @app.route('/search', methods=['GET'])
 def search(term=None):
@@ -117,7 +102,7 @@ def search(term=None):
 
     # loop through restaurants to see which contain keyword and add these to results
     for g in guides:
-        g_name = (g["guide-name"].lower())
+        g_name = (g["name"].lower())
         id = str(g["id"])
 
         if term in g_name:
@@ -127,13 +112,14 @@ def search(term=None):
 
 
 # below function is used to add a guide given information from user
+'''
 @app.route('/submit-guide', methods=['GET', 'POST'])
 def submit_guide():
    global guides
    global current_id
 
    json_data = request.get_json()
-   guide_name = json_data["guide_name"]
+   guide_name = json_data["name"]
    link = json_data["link"]
    image = json_data["image"]
    contributor = json_data["contributor"]
@@ -149,6 +135,7 @@ def submit_guide():
       }
    guides.append(new_guide)
    return jsonify(guides = guides, current_id=current_id)
+   '''
 
 # below route loads blog posts (not currently in use)
 @app.route('/view-guide/<id>', methods=['GET', 'POST'])
