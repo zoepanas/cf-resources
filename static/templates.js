@@ -1,30 +1,28 @@
+
 /* links input fields to their respective variables within
-   the template text; only needs to be run once */
-function format_template() {
+   the template text on first run; every run, replaces customizable
+   terms with user-inputted terms */
+function customize_template() {
     $(".customize-input-field").each(function (index) {
         var placeholder = $(this).attr("placeholder")
-        console.log("placeholder = "+placeholder)
+        var replace_class = placeholder.replace(/\s+/g, '-').toLowerCase();
+        var replace_with = $(this).val()
+        $(this).val('')
         var i = index
         $(".template-custom-item").each(function (index) {
-            console.log("here")
             var str = $(this).text()
             str = str.replace(/[\[\]']+/g,'');
-            console.log("str = "+str)
-            if (placeholder.equals(str)){
-                console.log(str)
-                $(this).addClass(i)
+            if (placeholder === str || $(this).hasClass(replace_class)){
+                if (!$(this).hasClass(replace_class)){
+                    $(this).addClass(replace_class)
+                }
+                $(this).text(replace_with)
             }
         })
     })
 }
 
-/* customizes template variables with user inputs */
-function customize_template() {
-    //
-}
-
 $(document).ready(function () {
-    format_template()
     $("#template-text").html(text)
     $(".submit-btn").click(function () {
         customize_template();
