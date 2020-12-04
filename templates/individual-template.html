@@ -13,7 +13,7 @@
       href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
 
-    <script src="../static/templates.js"></script>
+    <script src="../static/individual-templates.js"></script>
 
     <script>
       var template_photo = {{ template_photo| tojson}}
@@ -26,10 +26,10 @@
 
   <body>
     {% extends "layout.html" %} {% block content %}
-    <div class="header-block row">
+    <div class="header-section row">
         <div class="col-md-5">
-          <h2 class="in-h-block">{{template_name}}</h2>
-          <p class="in-h-block">
+          <h2 class="in-h-section">{{template_name}}</h2>
+          <p class="in-h-section">
             We’ve compiled a list of resources for community fridges, as well as a tool to build your own template to personalize it!
           </p>
         </div>
