@@ -22,42 +22,41 @@
   <body>
     {% extends "layout.html" %} {% block content %}
     
-    <div class="header-block row">
+    <div class="header-section row">
       <div class="col-md-5">
-        <h2 class="in-h-block">Templates</h2>
-        <p class="in-h-block">
+        <h2 class="in-h-section">Templates</h2>
+        <p class="in-h-section">
           We’ve compiled a list of resources for community fridges, as well as a tool to build your own template to personalize it!
         </p>
       </div>
       <div class="col-md-5"></div>
     </div>
 
-    <div id="main-body" class="row">
-      <div id="filter-col" class="col-2">
-        <h2>Filter By</h2>
+    <div class="main-body row">
+      <div class="filter-col col-2">
+        <h2 class="sort-header filter-by">Filter By</h2>
 
-        <div class="card">
-          <div class="card-header">FORMAT</div>
+        <div class="filter-object">
+          <div class="filter-section-header">F O R M A T</div>
           <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action"
-              >Email</a
-            >
-            <a href="#" class="list-group-item list-group-item-action"
-              >Instagram DM</a
-            >
-            <a href="#" class="list-group-item list-group-item-action"
-              >Phone Script</a
-            >
-
-            <a href="#" class="list-group-item list-group-item-action"
-              >Other</a
-            >
+            <a href="#" class="list-group-item list-group-item-action">
+              Email
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              Instagram DM
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              Phone Script
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              Other
+            </a>
           </div>
         </div>
       </div>
 
-      <div id="content-col" class="col-10">
-        <div id="search-row" class="row">
+      <div class="content-col col-10">
+        <div class="search-row row">
           <div class="input-icons">
             <i class="fa fa-search icon"></i>
             <input
@@ -78,12 +77,12 @@
         </div>
 
         <div class="sort-row row">
-          <h4 class="col-md-2">Sort by</h4>
+          <h2 class="col-md-2 sort-header">Sort by</h2>
           <div class="col-md-2 guides-tag">Most Popular</div>
           <div class="col-md-2 guides-tag">Most Recent</div>
         </div>
 
-        <div id="templates" class="row">
+        <div id="templates" class="objects-row row card-deck">
           {% for t in templates %}
           <div class="card temp-card" value="/view-template/{{t['id']}}">
             <img src="{{t['template-photo']}}" class="card-img-top template-img" alt="{{t['alt']}}" />

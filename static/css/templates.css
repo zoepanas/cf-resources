@@ -1,5 +1,32 @@
+.header-section {
+    font-family: "Montserrat";
+    border-radius: 6px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+h2.in-header-section {
+    font-family: "Montserrat";
+    font-size: 50px;
+    font-weight: 800;
+    align-items: center;
+}
+  
+p.in-header-section {
+    font-family: "Montserrat";
+    font-size: 20px;
+    align-items: center;
+}
+
+.sort-header {
+    font-size: 24px;
+}
+
+.filter-section-header {
+    padding-bottom: 15px;
+}
+
 .temp-card {
-    margin: 15px;
     width: 18rem;
     cursor: pointer;
 }

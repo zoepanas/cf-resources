@@ -38,10 +38,16 @@ p.in-header-block {
   height: 200px;
 }
 
-.gs-section {
-  padding-bottom: 20px;
+.objects-row {
+  padding-bottom: 50px;
 }
 
-.gs-subgroup {
-  font-weight: bold;
+.filter-object {
+  margin-right: 15px;
+  margin-top: 30px;
+}
+
+.sort-row {
+  padding-bottom: 20px;
+  padding-top: 15px;
 }
