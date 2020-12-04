@@ -32,28 +32,8 @@
       <div class="col-md-5"></div>
     </div>
 
-    <div class="row">
-      <div class="input-icons">
-        <i class="fa fa-search icon"></i>
-        <input
-          class="search-bar"
-          id="template-search-term"
-          size="60"
-          placeholder="Search for a template..."
-        /><br />
-      </div>
-
-      <button id="search-template-btn" type="button" class="btn btn-info">
-        Search
-      </button>
-
-      <button id="add-template-btn" type="button" class="btn btn-info">
-        Add Template
-      </button>
-    </div>
-
-    <div class="row">
-      <div class="col-3">
+    <div id="main-body" class="row">
+      <div id="filter-col" class="col-2">
         <h2>Filter By</h2>
 
         <div class="card">
@@ -74,9 +54,29 @@
             >
           </div>
         </div>
-
       </div>
-      <div class="col-md-9">
+
+      <div id="content-col" class="col-10">
+        <div id="search-row" class="row">
+          <div class="input-icons">
+            <i class="fa fa-search icon"></i>
+            <input
+              class="search-bar"
+              id="template-search-term"
+              size="60"
+              placeholder="Search for a template..."
+            /><br />
+          </div>
+    
+          <button id="search-template-btn" type="button" class="btn btn-info">
+            Search
+          </button>
+    
+          <button id="add-template-btn" type="button" class="btn btn-info">
+            Add Template
+          </button>
+        </div>
+
         <div class="sort-row row">
           <h4 class="col-md-2">Sort by</h4>
           <div class="col-md-2 guides-tag">Most Popular</div>
@@ -93,8 +93,8 @@
           </div>
           {% endfor %}
         </div>
-      </div>
 
+      </div>
     </div>
     
     {% endblock %}
