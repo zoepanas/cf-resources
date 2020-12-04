@@ -76,7 +76,7 @@
         </div>
 
       </div>
-      <div class="col-md-8">
+      <div class="col-md-9">
         <div class="sort-row row">
           <h4 class="col-md-2">Sort by</h4>
           <div class="col-md-2 guides-tag">Most Popular</div>
@@ -85,11 +85,11 @@
 
         <div id="templates" class="row">
           {% for t in templates %}
-          <div class="card">
-            <a class="card-body guide-object" href="/view-template/{{t['id']}}">
+          <div class="card temp-card" value="/view-template/{{t['id']}}">
+            <img src="{{t['template-photo']}}" class="card-img-top template-img" alt="{{t['alt']}}" />
+            <div class="card-body">
               <h5 class="card-title">{{t["template-name"]}}</h5>
-              <img src="{{t['template-photo']}}" class="template-img" alt="{{t['alt']}}" />
-            </a>
+            </div>
           </div>
           {% endfor %}
         </div>
