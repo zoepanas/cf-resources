@@ -1,5 +1,5 @@
 var search_guides = function (term) {
-  window.location.href = `/search?s=${term}`;
+  window.location.href = `/search-guides?s=${term}`;
 };
 
 function guideSubmitted() {
