@@ -1,4 +1,3 @@
-
 /* links input fields to their respective variables within
    the template text on first run; every run, replaces customizable
    terms with user-inputted terms */
@@ -8,7 +7,6 @@ function customize_template() {
         var replace_class = placeholder.replace(/\s+/g, '-').toLowerCase();
         var replace_with = $(this).val()
         $(this).val('')
-        var i = index
         $(".template-custom-item").each(function (index) {
             var str = $(this).text()
             str = str.replace(/[\[\]']+/g,'');
