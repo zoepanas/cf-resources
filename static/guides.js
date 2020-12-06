@@ -52,6 +52,7 @@ $(document).ready(function () {
   $("#add-guide-btn").click(function () {
     console.log("showing");
     $("#add-guide-modal").show();
+    $(".main-body").addClass("is-faded");
   });
 
   $("#submit-guide-btn").click(function () {
@@ -66,6 +67,10 @@ $(document).ready(function () {
 
   $(".close").click(function () {
     $("#add-guide-modal").hide();
+  });
+
+  $("#got-it-btn").click(function () {
+    $("#guide-submitted-modal").hide();
   });
 
   $(window).click(function () {

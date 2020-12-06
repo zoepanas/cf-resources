@@ -6,6 +6,7 @@
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
     <script src="https://use.fontawesome.com/0b04c030ef.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <link
       rel="stylesheet"
       href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
@@ -21,6 +22,29 @@
 
   <body>
     {% extends "layout.html" %} {% block content %}
+
+    <!-- START: Modal for successful submission of guide -->
+    <div class="modal" tabindex="-1" role="dialog" id="guide-submitted-modal">
+      <div class="modal-dialog success-modal" role="document">
+        <div class="success-modal-content center-elts">
+          <span
+            class="iconify success-icon center-elts"
+            data-icon="ant-design:check-circle-outlined"
+            data-inline="false"
+          ></span>
+          <!--<div class="modal-header">-->
+          <h5 class="modal-title">Success!</h5>
+          <div>
+            <p class="in-success-modal">
+              Thank you for your help! Your guide has been submitted to our team
+              for review. We will send you an email once we verify it.
+            </p>
+          </div>
+          <button class="btn btn-info" id="got-it-btn">Got it!</button>
+        </div>
+      </div>
+    </div>
+    <!-- END: Modal for successful submission of guide -->
 
     <!-- START: Modal for Adding Guide-->
     <div class="modal" tabindex="-1" role="dialog" id="add-guide-modal">
@@ -120,8 +144,8 @@
 
     <div class="header-block row">
       <div class="col-md-5">
-        <h2 class="in-h-block">Resource Guides</h2>
-        <p class="in-h-block">
+        <h2 class="in-h-section">Resource Guides</h2>
+        <p class="in-h-section">
           We’ve compiled a list of resources for community fridges, and creating
           this website to share them with the community!
         </p>
@@ -129,89 +153,94 @@
       <div class="col-md-5"></div>
     </div>
 
-    <div class="row">
-      <div class="input-icons">
-        <i class="fa fa-search icon"></i>
-        <input
-          class="search-bar"
-          id="guide-search-term"
-          size="60"
-          placeholder="Search for a guide..."
-        /><br />
-      </div>
+    <!-- START NEW STYLING -->
 
-      <button id="search-guide-btn" type="button" class="btn btn-info">
-        Search
-      </button>
+    <div class="main-body row">
+      <div class="filter-col col-2">
+        <h2 class="sort-header filter-by">Filter By</h2>
 
-      <button id="add-guide-btn" type="button" class="btn btn-info">
-        Add Guide
-      </button>
-    </div>
-
-    <div class="row">
-      <div class="col-3">
-        <h2>Filter By</h2>
-
-        <div class="card">
-          <div class="card-header">FRIDGE</div>
+        <div class="filter-object">
+          <div class="filter-section-header">F R I D G E</div>
           <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action"
-              >The Uptown Fridge</a
-            >
-            <a href="#" class="list-group-item list-group-item-action"
-              >Jamaica Fridge</a
-            >
-            <a href="#" class="list-group-item list-group-item-action"
-              >Mott Haven Fridge</a
-            >
+            <a href="#" class="list-group-item list-group-item-action">
+              The Uptown Fridge
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              Jamaica Fridge
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              Motthaven Fridge
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              Chelsea Fridge
+            </a>
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-header">TOPIC</div>
+        <div class="filter-object">
+          <div class="filter-section-header">T O P I C</div>
           <div class="list-group list-group-flush">
-            <a
-              id="navigating-obstacles"
-              href="#"
-              class="list-group-item list-group-item-action guide-topic"
-              >Navigating Obstacles</a
-            >
-            <a
-              id="food-waste"
-              href="#"
-              class="list-group-item list-group-item-action guide-topic"
-              >Food Waste</a
-            >
-            <a
-              id="food-sources"
-              href="#"
-              class="list-group-item list-group-item-action guide-topic"
-              >Food Sources</a
-            >
+            <a href="#" class="list-group-item list-group-item-action">
+              Navigating Obstacles
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              Food Waste
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              Food Sources
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              Scheduling
+            </a>
           </div>
         </div>
       </div>
-      <div class="col-md-8">
+
+      <div class="content-col col-10">
+        <div class="search-row row">
+          <div class="input-icons">
+            <i class="fa fa-search icon"></i>
+            <input
+              class="search-bar"
+              id="guide-search-term"
+              size="60"
+              placeholder="Search for a guide..."
+            /><br />
+          </div>
+
+          <button id="search-guide-btn" type="button" class="btn btn-info">
+            Search
+          </button>
+
+          <button id="add-guide-btn" type="button" class="btn btn-info">
+            Add Guide
+          </button>
+        </div>
+
         <div class="sort-row row">
-          <h4 class="col-md-2">Sort by</h4>
+          <h2 class="col-md-2 sort-header">Sort by</h2>
           <div class="col-md-2 guides-tag">Most Popular</div>
           <div class="col-md-2 guides-tag">Most Recent</div>
         </div>
 
-        <div id="guides" class="row">
+        <div id="guides" class="objects-row row card-deck">
           {% for g in guides %}
-          <div class="card">
-            <div class="card-body guide-object" value="{{g['link']}}">
-              <img src="{{g['image']}}" class="guide-img" />
+          <div class="card shadow temp-card" value="{{g['link']}}">
+            <img
+              src="{{g['image']}}"
+              class="card-img-top template-img"
+              alt=""
+            />
+            <div class="card-body">
               <h5 class="card-title">{{g["title"]}}</h5>
             </div>
-            <hr />
           </div>
           {% endfor %}
         </div>
       </div>
     </div>
+
+    <!--END NEW STYLING-->
 
     {% endblock %}
   </body>
