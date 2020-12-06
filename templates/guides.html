@@ -235,7 +235,10 @@
               <h5 class="card-title">{{g["title"]}}</h5>
             </div>
           </div>
-          {% endfor %}
+          {% if g["id"]%3 == 0%}
+        </div>
+        <div id="guides" class="objects-row row card-deck">
+          {% endif %} {% endfor %}
         </div>
       </div>
     </div>
