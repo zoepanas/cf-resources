@@ -229,7 +229,10 @@
 
         <div id="guides" class="objects-row row card-deck">
           {% for i in range(guides|length) %}
-          <div class="card shadow temp-card" value="{{guides[i]['link']}}">
+          <div
+            class="card shadow temp-card guide-object"
+            value="{{guides[i]['link']}}"
+          >
             <img
               src="{{guides[i]['image']}}"
               class="card-img-top template-img"
