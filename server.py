@@ -14,7 +14,7 @@ guides = [
         "link": "https://www.dropbox.com/sh/99k56d92o1elqqr/AAA1arRM_mAFZpks8nEQKv3oa/1.%20HOW%20TO%20GUIDE?dl=0&preview=Community+fridge_how+to+guide_print_2019.pdf&subfolder_nav_tracking=1",
         "name": "Hubbub",
         "email": "starter-guide",
-        "date": "Sun Dec 06 2020 09:06:43 GMT-0500 (Eastern Standard Time)",
+        "date": "Sun Dec 06 2020 09:07:43 GMT-0500 (Eastern Standard Time)",
     },
     {
         "id": 2,
@@ -23,7 +23,7 @@ guides = [
         "link": "https://freedge.org/freedge-yourself/legal/",
         "name": "Hubbub",
         "email": "starter-guide",
-        "date": "Sun Dec 06 2020 09:06:43 GMT-0500 (Eastern Standard Time)",
+        "date": "Sun Dec 06 2020 08:06:43 GMT-0500 (Eastern Standard Time)",
     },
     {
         "id": 3,
@@ -32,7 +32,7 @@ guides = [
         "link": "https://freedge.org/freedge-yourself/legal/",
         "name": "Freedge",
         "email": "starter-guide",
-        "date": "Sun Dec 06 2020 09:06:43 GMT-0500 (Eastern Standard Time)",
+        "date": "Sun Nov 29 2020 11:46:43 GMT-0500 (Eastern Standard Time)",
     },
     {
         "id": 4,
@@ -41,7 +41,7 @@ guides = [
         "link": "https://drive.google.com/file/d/0ByNpGtZ0hcfaSUNEbFZpLXJKVW8/view",
         "name": "Freedge",
         "email": "starter-guide",
-        "date": "Sun Dec 06 2020 09:06:43 GMT-0500 (Eastern Standard Time)",
+        "date": "Mon Dec 07 2020 09:06:43 GMT-0500 (Eastern Standard Time)",
    },
    {
         "id": 5,
@@ -50,7 +50,7 @@ guides = [
         "link": "https://www.dropbox.com/sh/99k56d92o1elqqr/AABBsoEtOqp7V1zkXxKcCvxOa/3.%20HEALTH%20%26%20SAFETY/COVID-19?dl=0&preview=CF+guide+on+operating+safely+in+lockdown_v2_4.11.20.pdf&subfolder_nav_tracking=1",
         "name": "Hubbub",
         "email": "starter-guide",
-        "date": "Sun Dec 06 2020 09:06:43 GMT-0500 (Eastern Standard Time)",
+        "date": "Sat Dec 05 2020 10:06:43 GMT-0500 (Eastern Standard Time)",
    },
    {
         "id": 6,
@@ -59,7 +59,7 @@ guides = [
         "link": "http://neverasolidaria.org/como-puedo-instalar-una/",
         "name": "Nevera Solidaria",
         "email": "starter-guide",
-        "date": "Sun Dec 06 2020 09:06:43 GMT-0500 (Eastern Standard Time)",
+        "date": "Fri Dec 05 2020 01:06:43 GMT-0500 (Eastern Standard Time)",
    },]
 
 templates = [
@@ -193,6 +193,13 @@ def view_template(id=None):
    print(template_name)
     
    return render_template('individual-template.html', id=id, template_photo=template_photo, alt=alt, template_name=template_name, text=text, input_fields=input_fields)
+
+@app.route('/most-recent', methods=['GET', 'POST'])
+def get_recent():
+   global guides
+   sorted_guides = sorted(guides, key=lambda k: k['date']) 
+   return render_template('guides.html', guides=sorted_guides)
+   
 
 if __name__ == '__main__':
    app.run(debug = True)

@@ -13,6 +13,10 @@ function currentDT() {
   return date;
 }
 
+function get_most_recent_guides() {
+  window.location.href = `/most-recent`;
+}
+
 function sendEmail() {
   var title = $("#guide-title").val();
   var link = $("#guide-link").val();
@@ -77,7 +81,7 @@ $(document).ready(function () {
     $("add-guide-modal").hide();
   });
 
-  $("#myModal").on("shown.bs.modal", function () {
-    $("#myInput").trigger("focus");
+  $("#most-recent-guides").click(function () {
+    get_most_recent_guides();
   });
 });

@@ -219,23 +219,27 @@
 
         <div class="sort-row row">
           <h2 class="col-md-2 sort-header">Sort by</h2>
-          <div class="col-md-2 guides-tag">Most Popular</div>
-          <div class="col-md-2 guides-tag">Most Recent</div>
+          <div class="col-md-2 guides-tag" id="most-popular-guides">
+            Most Popular
+          </div>
+          <div class="col-md-2 guides-tag" id="most-recent-guides">
+            Most Recent
+          </div>
         </div>
 
         <div id="guides" class="objects-row row card-deck">
-          {% for g in guides %}
-          <div class="card shadow temp-card" value="{{g['link']}}">
+          {% for i in range(guides|length) %}
+          <div class="card shadow temp-card" value="{{guides[i]['link']}}">
             <img
-              src="{{g['image']}}"
+              src="{{guides[i]['image']}}"
               class="card-img-top template-img"
               alt=""
             />
             <div class="card-body">
-              <h5 class="card-title">{{g["title"]}}</h5>
+              <h5 class="card-title">{{guides[i]["title"]}}</h5>
             </div>
           </div>
-          {% if g["id"]%3 == 0%}
+          {% if ((i+1) % 3 == 0) and (i != 0) %}
         </div>
         <div id="guides" class="objects-row row card-deck">
           {% endif %} {% endfor %}
