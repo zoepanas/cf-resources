@@ -79,6 +79,9 @@
                 <div class="row input-title">
                   <label for="fridge-email">Email*</label>
                 </div>
+                <div class="row input-title">
+                  <label for="fridge-tag">Tags</label>
+                </div>
               </div>
               <div class="col-md-5 modal-col">
                 <div class="row">
@@ -120,6 +123,35 @@
                     class="input-bar"
                     placeholder="Email"
                   />
+                </div>
+                <div class="row">
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-info dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Select a Tag
+                    </button>
+                    <div
+                      class="dropdown-menu tag-options"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <div class="dropdown-item" value="Getting Started">
+                        Getting Started
+                      </div>
+                      <div class="dropdown-item" value="Volunteers">
+                        Volunteers
+                      </div>
+                      <div class="dropdown-item" value="Partnerships">
+                        Partnerships
+                      </div>
+                      <div class="dropdown-item" value="Misc">Misc</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -186,18 +218,30 @@
         <div class="filter-object">
           <div class="filter-section-header">T O P I C</div>
           <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action">
-              Navigating Obstacles
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-              Food Waste
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-              Food Sources
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-              Scheduling
-            </a>
+            <div
+              class="list-group-item list-group-item-action filter-by-tag"
+              value="Getting Started"
+            >
+              Getting Started
+            </div>
+            <div
+              class="list-group-item list-group-item-action filter-by-tag"
+              value="Partnerships"
+            >
+              Partnerships
+            </div>
+            <div
+              class="list-group-item list-group-item-action filter-by-tag"
+              value="Volunteers"
+            >
+              Volunteers
+            </div>
+            <div
+              class="list-group-item list-group-item-action filter-by-tag"
+              value="Misc"
+            >
+              Misc
+            </div>
           </div>
         </div>
       </div>

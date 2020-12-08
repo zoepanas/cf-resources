@@ -15,6 +15,7 @@ guides = [
         "name": "Hubbub",
         "email": "starter-guide",
         "date": "Sun Dec 06 2020 09:07:43 GMT-0500 (Eastern Standard Time)",
+        "tag": "Getting Started",
     },
     {
         "id": 2,
@@ -24,6 +25,7 @@ guides = [
         "name": "Hubbub",
         "email": "starter-guide",
         "date": "Sun Dec 06 2020 08:06:43 GMT-0500 (Eastern Standard Time)",
+        "tag": "Misc",
     },
     {
         "id": 3,
@@ -33,6 +35,7 @@ guides = [
         "name": "Freedge",
         "email": "starter-guide",
         "date": "Sun Nov 29 2020 11:46:43 GMT-0500 (Eastern Standard Time)",
+        "tag": "Misc",
     },
     {
         "id": 4,
@@ -42,6 +45,7 @@ guides = [
         "name": "Freedge",
         "email": "starter-guide",
         "date": "Mon Dec 07 2020 09:06:43 GMT-0500 (Eastern Standard Time)",
+        "tag": "Getting Started",
    },
    {
         "id": 5,
@@ -51,6 +55,7 @@ guides = [
         "name": "Hubbub",
         "email": "starter-guide",
         "date": "Sat Dec 05 2020 10:06:43 GMT-0500 (Eastern Standard Time)",
+        "tag": "Partnerships",
    },
    {
         "id": 6,
@@ -60,6 +65,7 @@ guides = [
         "name": "Nevera Solidaria",
         "email": "starter-guide",
         "date": "Fri Dec 05 2020 01:06:43 GMT-0500 (Eastern Standard Time)",
+        "tag": "Getting Started",
    },]
 
 templates = [
@@ -150,6 +156,20 @@ def get_by_fridge(fridge=None):
            results.append(g)
 
     return render_template('guides.html', guides=results)
+   
+@app.route('/guides/tag', methods=['GET'])
+def get_by_tag(tag=None):
+    global guides
+    global current_id
+
+    tag = (request.args.get('t', default="", type=str)).lower()
+    results = []
+    for g in guides:
+       if g["tag"].lower() == tag:
+           results.append(g)
+
+    return render_template('guides.html', guides=results)
+
 
 @app.route('/search-templates', methods=['GET'])
 def search_templates(term=None):

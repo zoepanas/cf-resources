@@ -21,6 +21,10 @@ function get_by_fridge(fridge) {
   window.location.href = `/guides/fridge?f=${fridge}`;
 }
 
+function get_by_tag(tag) {
+  window.location.href = `/guides/tag?t=${tag}`;
+}
+
 function sendEmail() {
   var title = $("#guide-title").val();
   var link = $("#guide-link").val();
@@ -52,6 +56,7 @@ function sendEmail() {
 }
 
 $(document).ready(function () {
+  $("#add-guide-modal").show();
   $(".guide-object").click(function () {
     var link = $(this).attr("value");
     window.location.href = link;
@@ -91,7 +96,21 @@ $(document).ready(function () {
 
   $(".filter-by-fridge").click(function () {
     var fridge = $(this).attr("value");
-    console.log("FRIDGE name:", fridge);
     get_by_fridge(fridge);
+  });
+
+  $(".filter-by-tag").click(function () {
+    var tag = $(this).attr("value");
+    get_by_tag(tag);
+  });
+
+  $("#dropdownMenuButton").click(function () {
+    $(".tag-options").toggle();
+  });
+
+  $(".dropdown-item").click(function () {
+    var fridge_tag = $(this).attr("value");
+    console.log(fridge_tag);
+    $(".tag-options").toggle();
   });
 });
