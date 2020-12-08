@@ -2,100 +2,106 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/templates.css" />
 
-    <style>
-      .gs-section {
-        padding-bottom: 20px;
-      }
-
-      .gs-section-subheader {
-        font-size: 16px;
-      }
-
-      .gs-section-header {
-        font-size: 25px;
-        font-weight: bold;
-      }
-
-      .gs-subgroup {
-        font-weight: bold;
-      }
-    </style>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="https://use.fontawesome.com/0b04c030ef.js"></script>
+    
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
   </head>
 
   <body>
     {% extends "layout.html" %} {% block content %}
 
-    <div>
-      <h2>Getting Started</h2>
-      <p>
-        We welcome you to the community fridge resource guide! See an overview
-        of our mission, who we are, and some key resources to get started with.
-      </p>
-    </div>
-
-    <div class="gs-section">
-      <div class="gs-section-subheader">Overview</div>
-      <div class="gs-section-header">Mission</div>
-      <div>
-        We've compiled these resources by the community for the community to
-        keep sustaining our community fridge network. We hope this living
-        document will be a space for community fridges to learn how to establish
-        relationships with food producers that have shared values and shared
-        commitment to the community.
+    <div class="header-section row">
+      <div class="col-md-5">
+        <h2 class="in-h-section">🌱 Getting Started</h2>
+        <p class="in-h-section">
+          We welcome you to the community fridge resource guide! See an overview
+          of our mission, who we are, and some key resources to get started with.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <img class="pull-right img-responsive" src='/static/img/fridge.png' alt='cartoon image of two people near an open fridge'>
       </div>
     </div>
 
-    <div class="gs-section">
-      <div class="gs-section-subheader">Who We Are</div>
-      <div class="gs-section-header">The Team</div>
-      <div>
-        We're a group of students from New York City who recognized the
-        difficulties that fridges were facing in different areas, with no
-        centralized way to keep track of resources. Feel free to contact us at
-        sj2472@columbia.edu if you want to connect!
+    <div class="gs-section row">
+      <div class="col-12">
+        <div class="gs-section-header">OVERVIEW</div>
+        <div class="sort-header">About CFR</div>
+        <div>
+          We are a group of students that have compiled a list of 
+          resources for community fridges, and created this website 
+          to share them with the community! We’ve compiled these resources 
+          by the community for the community to keep sustaining our 
+          community fridge network. We hope this living document will 
+          be a space for community fridges to learn how to establish 
+          relationships with food producers that have shared values 
+          and share commitment to the community.
+        </div>
       </div>
     </div>
 
-    <div class="gs-section">
-      <div class="gs-section-subheader">O V E R V I E W</div>
-      <div class="gs-section-header">Key Resources</div>
-      <div class="row">
-        <div class="col-4">
-          <div class="row gs-subgroup">
-            <img class="gs-img" src="../static/img/forum.png" alt="" />
-          </div>
-          <div class="row gs-subgroup">Community Forum</div>
-          <div class="row">Ask questions and provide tips to the community</div>
-          <div class="row">
-            <a href="/forum" type="button" class="btn btn-info">See More</a>
-          </div>
+    <div class="gs-section row">
+      <div class="col-12">
+        <div class="gs-section-header">WHO WE ARE</div>
+        <div class="sort-header">The Team</div>
+        <div>
+          We're a group of students from New York City who recognized the
+          difficulties that fridges were facing in different areas, with no
+          centralized way to keep track of resources. Feel free to contact us at
+          sj2472@columbia.edu if you want to connect!
         </div>
+      </div>
+    </div>
 
-        <div class="col-4">
-          <div class="row gs-subgroup">
-            <img class="gs-img" src="../static/img/templates.png" alt="" />
-          </div>
-          <div class="row gs-subgroup">Templates</div>
-          <div class="row">
-            Templates for reaching out, flyers, brochures, etc. made by the
-            community
-          </div>
-          <div class="row">
-            <a href="/templates" type="button" class="btn btn-info">See More</a>
-          </div>
-        </div>
+    <div class="gs-section row">
+      <div class="col-12">
+        <div class="gs-section-header">OVERVIEW</div>
+        <div class="sort-header">Key Resources</div>
+        <div class="row">
 
-        <div class="col-4">
-          <div class="row gs-subgroup">
-            <img class="gs-img" src="../static/img/guides.png" alt="" />
+          <div class="col-4 gs-subgroup">
+            <div class="gs-subgroup-item">
+              <img class="gs-img" src="../static/img/forum.png" alt="" />
+            </div>
+            <div class="gs-subgroup-header gs-subgroup-item">Community Forum</div>
+            <div class="gs-subgroup-item">Ask questions and provide tips to the community</div>
+            <div class="gs-subgroup-item">
+              <a href="/forum" type="button" class="btn btn-info">See More</a>
+            </div>
           </div>
-          <div class="row gs-subgroup">Guides</div>
-          <div class="row">
-            Outlines key places to reach out to for food source partnerships
+
+          <div class="col-4 gs-subgroup">
+            <div class="gs-subgroup-item">
+              <img class="gs-img" src="../static/img/templates.png" alt="" />
+            </div>
+            <div class="gs-subgroup-header gs-subgroup-item">Templates</div>
+            <div class="gs-subgroup-item">
+              Templates for reaching out, flyers, brochures, etc. made by the
+              community
+            </div>
+            <div class="gs-subgroup-item">
+              <a href="/templates" type="button" class="btn btn-info">See More</a>
+            </div>
           </div>
-          <div class="row">
-            <a href="/guides" type="button" class="btn btn-info">See More</a>
+
+          <div class="col-4 gs-subgroup">
+            <div class="gs-subgroup-item">
+              <img class="gs-img" src="../static/img/guides.png" alt="" />
+            </div>
+            <div class="gs-subgroup-header gs-subgroup-item">Guides</div>
+            <div class="gs-subgroup-item">
+              Outlines key places to reach out to for food source partnerships
+            </div>
+            <div class="gs-subgroup-item">
+              <a href="/guides" type="button" class="btn btn-info">See More</a>
+            </div>
           </div>
         </div>
       </div>

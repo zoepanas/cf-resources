@@ -53,8 +53,22 @@ p.in-header-block {
 }
 
 .gs-img {
-  max-width: 250px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  height: 200px;
+}
+
+.gs-section {
+  padding-bottom: 50px;
+  font-family: 'Montserrat';
+}
+
+.gs-subgroup {
+  align-items: center;
+}
+
+.gs-subgroup-header {
+  font-weight: bold;
+}
+
+.gs-subgroup-item {
+  padding-bottom: 15px;
 }
