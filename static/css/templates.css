@@ -3,6 +3,7 @@
     border-radius: 6px;
     margin-top: 4rem;
     margin-bottom: 4rem;
+    align-items: center;
 }
 
 h2.in-header-section {
@@ -29,10 +30,6 @@ p.in-header-section {
 .temp-card {
     width: 18rem;
     cursor: pointer;
-}
-
-.temp-img {
-    width: 100%;
 }
 
 .temp-header-block {
