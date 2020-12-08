@@ -65,15 +65,17 @@ guides = [
 templates = [
    {
       "id": 1,
-      "template-photo": "/static/img/fridge-img.png",
+      "author": "Hubbub",
+      "template-photo": "/static/img/temp1.png",
       "alt": "Photo of fridge",
-      "template-name": "Reaching Out to Food Resources",
-      "text": "Dear <span class='template-custom-item'>[Business Name]</span>, <br> <br> I hope you are doing well. My name is <span class='template-custom-item'>[Your Name]</span> and I am writing to you as the organizer of <span class='template-custom-item'>[Fridge Name]</span>, a community fridge located at <span class='template-custom-item'>[Fridge Location]</span>. A community fridge is a form of mutual aid that... As a local <span class='template-custom-item'>[Business Type]</span> owner, I was hoping that you would be willing to help support the community... <br> <br> I look forward to hearing from you soon! <br> <br> Best, <br> <span class='template-custom-item'>[Your Name]</span>",
-      "input-fields": ["Business Name", "Your Name", "Fridge Name", "Fridge Location", "Business Type"]
+      "template-name": "Reaching Out to Businesses",
+      "text": "Dear <span class='template-custom-item'>[Business Name]</span>, <br> <br> <span class='template-custom-item'>[Fridge Name]</span> is now open, and we'd love <span class='template-custom-item'>[Business Name]</span> to support it. <br> <br> The aim of the fridge is to fight food waste and support local community members. It does this by collecting leftover food from businesses, then making it available to local residents and community groups. This includes individuals with limited access to affordable fresh and nutritious food. <br> <br> The Community Fridge is housed in <span class='template-custom-item'>[Fridge Location]</span> and is open between <span class='template-custom-item'>[Fridge Hours]</span>. <br> <br> Strict monitoring guidelines based on advice from the Food Standards Agency and the Council's Environmental Health team ensure the fridge operates to the highest quality standards. <br> <br> Benefits to <span class='template-custom-item'>[Business Name]</span>: <br> <br> - A free service collecting food that would otherwise be thrown away, helping you to become a zero waste business. <br> - An opportunity for <span class='template-custom-item'>[Business Name]</span> to contribute positive social impact; supporting the local community, in particular individuals who are in financial hardship. <br> - The chance to be credited as a business champion in the community fridge's promotional materials, online pages and press. <br> <br> We'd love to discuss how <span class='template-custom-item'>[Fridge Name]</span> could benefit your business. If you're happy to discuss please let us know some possible dates and times. Likewise let us know if you have any other questions or would like to discuss further. <br> <br> Best wishes, <br> <span class='template-custom-item'>[Your Name]</span>",
+      "input-fields": ["Business Name", "Fridge Name", "Fridge Location", "Fridge Hours", "Your Name"]
    },
    {
       "id": 2,
-      "template-photo": "/static/img/fridge-img.png",
+      "author": "The Harlem Community Fridge",
+      "template-photo": "/static/img/temp2.png",
       "alt": "Photo of fridge",
       "template-name": "Reaching Out to Non-Profits",
       "text": "Dear <span class='template-custom-item'>[Business Name]</span>, <br> <br> I hope you are doing well. My name is <span class='template-custom-item'>[Your Name]</span> and I am writing to you as the organizer of <span class='template-custom-item'>[Fridge Name]</span>, a community fridge located at <span class='template-custom-item'>[Fridge Location]</span>. A community fridge is a form of mutual aid that... As a local <span class='template-custom-item'>[Business Type]</span> owner, I was hoping that you would be willing to help support the community... <br> <br> I look forward to hearing from you soon! <br> <br> Best, <br> <span class='template-custom-item'>[Your Name]</span>",
@@ -81,7 +83,8 @@ templates = [
    },
    {
       "id": 3,
-      "template-photo": "/static/img/fridge-img.png",
+      "author": "The Jamaica Fridge",
+      "template-photo": "/static/img/temp3.png",
       "alt": "Photo of fridge",
       "template-name": "Applying for Funding",
       "text": "Dear <span class='template-custom-item'>[Business Name]</span>, <br> <br> I hope you are doing well. My name is <span class='template-custom-item'>[Your Name]</span> and I am writing to you as the organizer of <span class='template-custom-item'>[Fridge Name]</span>, a community fridge located at <span class='template-custom-item'>[Fridge Location]</span>. A community fridge is a form of mutual aid that... As a local <span class='template-custom-item'>[Business Type]</span> owner, I was hoping that you would be willing to help support the community... <br> <br> I look forward to hearing from you soon! <br> <br> Best, <br> <span class='template-custom-item'>[Your Name]</span>",
