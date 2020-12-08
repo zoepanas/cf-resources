@@ -162,18 +162,24 @@
         <div class="filter-object">
           <div class="filter-section-header">F R I D G E</div>
           <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action">
-              The Uptown Fridge
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-              Jamaica Fridge
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-              Motthaven Fridge
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-              Chelsea Fridge
-            </a>
+            <div
+              class="list-group-item list-group-item-action filter-by-fridge"
+              value="Freedge"
+            >
+              Freedge
+            </div>
+            <div
+              class="list-group-item list-group-item-action filter-by-fridge"
+              value="Hubbub"
+            >
+              Hubbub
+            </div>
+            <div
+              class="list-group-item list-group-item-action filter-by-fridge"
+              value="Nevera Solidaria"
+            >
+              Nevera Solidaria
+            </div>
           </div>
         </div>
 
@@ -231,6 +237,7 @@
           {% for i in range(guides|length) %}
           <div
             class="card shadow temp-card guide-object"
+            style="width: 12rem"
             value="{{guides[i]['link']}}"
           >
             <img

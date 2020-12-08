@@ -17,6 +17,10 @@ function get_most_recent_guides() {
   window.location.href = `/most-recent`;
 }
 
+function get_by_fridge(fridge) {
+  window.location.href = `/guides/fridge?f=${fridge}`;
+}
+
 function sendEmail() {
   var title = $("#guide-title").val();
   var link = $("#guide-link").val();
@@ -83,5 +87,11 @@ $(document).ready(function () {
 
   $("#most-recent-guides").click(function () {
     get_most_recent_guides();
+  });
+
+  $(".filter-by-fridge").click(function () {
+    var fridge = $(this).attr("value");
+    console.log("FRIDGE name:", fridge);
+    get_by_fridge(fridge);
   });
 });

@@ -24,7 +24,8 @@ p.in-header-section {
 }
 
 .temp-card {
-  width: 18rem;
+  /*width: 18rem;*/
+  max-width: 30%;
   cursor: pointer;
 }
 

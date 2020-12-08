@@ -124,13 +124,27 @@ def search_guides(term=None):
     term = (request.args.get('s', default="", type=str)).lower()
     results = []
 
-    # loop through restaurants to see which contain keyword and add these to results
+    # loop through guides to see which contain keyword in title and add these to results
     for g in guides:
         g_name = (g["name"].lower())
         id = str(g["id"])
 
         if term in g_name:
             results.append(g)
+
+    return render_template('guides.html', guides=results)
+
+@app.route('/guides/fridge', methods=['GET'])
+def get_by_fridge(fridge=None):
+    global guides
+    global current_id
+
+    fridge = (request.args.get('f', default="", type=str)).lower()
+    results = []
+    for g in guides:
+       if g["name"].lower() == fridge:
+           print(fridge)
+           results.append(g)
 
     return render_template('guides.html', guides=results)
 
