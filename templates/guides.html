@@ -125,9 +125,9 @@
                   />
                 </div>
                 <div class="row">
-                  <div class="dropdown">
+                  <!--<div class="dropdown">
                     <button
-                      class="btn btn-info dropdown-toggle"
+                      class="btn dropdown-toggle tag-picker-button btn-primary"
                       type="button"
                       id="dropdownMenuButton"
                       data-toggle="dropdown"
@@ -151,7 +151,19 @@
                       </div>
                       <div class="dropdown-item" value="Misc">Misc</div>
                     </div>
-                  </div>
+                  </div>-->
+                  <select class="selectpicker tag-picker" title="Select a Tag">
+                    <option class="tag-option" value="Getting Started">
+                      Getting Started
+                    </option>
+                    <option class="tag-option" value="Volunteers">
+                      Volunteers
+                    </option>
+                    <option class="tag-option" value="Partnerships">
+                      Partnerships
+                    </option>
+                    <option class="tag-option" value="Misc">Misc</option>
+                  </select>
                 </div>
               </div>
             </div>
@@ -164,7 +176,7 @@
             >
               Cancel
             </button>
-            <button type="button" id="submit-guide-btn" class="btn btn-primary">
+            <button type="button" id="submit-guide-btn" class="btn btn-info">
               Submit Guide
             </button>
           </div>

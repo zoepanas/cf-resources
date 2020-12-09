@@ -1,3 +1,5 @@
+var new_fridge_tag = "";
+
 var search_guides = function (term) {
   window.location.href = `/search-guides?s=${term}`;
 };
@@ -32,6 +34,7 @@ function sendEmail() {
   var name = $("#fridge-name").val();
   var email = $("#fridge-email").val();
   var time = currentDT();
+  var tag = new_fridge_tag;
   Email.send({
     Host: "smtp.gmail.com",
     Username: "cf.resources.nyc@gmail.com",
@@ -51,7 +54,9 @@ function sendEmail() {
       "<br> Associated Email: " +
       email +
       "<br>Time submitted: " +
-      time,
+      time +
+      "<br>Guide Topic: " +
+      tag,
   }).then(guideSubmitted());
 }
 
@@ -104,13 +109,7 @@ $(document).ready(function () {
     get_by_tag(tag);
   });
 
-  $("#dropdownMenuButton").click(function () {
-    $(".tag-options").toggle();
-  });
-
-  $(".dropdown-item").click(function () {
-    var fridge_tag = $(this).attr("value");
-    console.log(fridge_tag);
-    $(".tag-options").toggle();
+  $(".tag-option").click(function () {
+    new_fridge_tag = $(this).attr("value");
   });
 });

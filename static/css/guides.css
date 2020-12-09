@@ -156,3 +156,33 @@ p.in-success-modal {
   z-index: 100;
   cursor: pointer;
 }
+
+.tag-picker {
+  width: 100%;
+  margin: 0.5rem 1rem 0.5rem 0.5rem;
+  background-color: #eff5f5 !important;
+  border: 0px !important;
+  border-radius: 0.5rem !important;
+  color: #797979 !important;
+  padding: 0.5rem 2rem 0.5rem 1rem;
+}
+
+select {
+  width: 100%;
+  margin: 0.5rem 1rem 0.5rem 0.5rem;
+  background-color: #eff5f5 !important;
+  border: 0px !important;
+  border-radius: 0.5rem !important;
+  color: #797979 !important;
+  padding: 0.5rem 2rem 0.5rem 1rem;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: #eff5f5 !important;
+  border: 0px !important;
+  border-radius: 0.5rem !important;
+  color: #797979 !important;
+}
