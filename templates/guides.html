@@ -14,6 +14,7 @@
     <script src="../static/guides.js"></script>
     <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
     <link rel="stylesheet" type="text/css" href="../static/css/guides.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/templates.css" />
 
     <script>
       var guides = {{ guides| tojson}}
@@ -159,15 +160,17 @@
 
     <!-- END: Modal for Adding Guide-->
 
-    <div class="header-block row">
+    <div class="header-section row">
       <div class="col-md-5">
-        <h2 class="in-h-section">Resource Guides</h2>
+        <h2 class="in-h-section">🌱 Resource Guides</h2>
         <p class="in-h-section">
           We’ve compiled a list of resources for community fridges, and creating
           this website to share them with the community!
         </p>
       </div>
-      <div class="col-md-5"></div>
+      <div class="col-md-6">
+        <img class="pull-right img-responsive" src='/static/img/fridge.png' alt='cartoon image of two people near an open fridge'>
+      </div>
     </div>
 
     <!-- START NEW STYLING -->
