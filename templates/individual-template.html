@@ -28,10 +28,18 @@
     {% extends "layout.html" %} {% block content %}
     <div class="header-section row">
         <div class="col-md-5">
+          <div>TEMPLATE</div>
           <h2 class="in-h-section">{{template_name}}</h2>
           <p class="in-h-section">
             We’ve compiled a list of resources for community fridges, as well as a tool to build your own template to personalize it!
           </p>
+        </div>
+        <div class="col-md-6">
+          <img
+            class="pull-right img-responsive"
+            src="/static/img/fridge.png"
+            alt="cartoon image of two people near an open fridge"
+          />
         </div>
     </div>
 
