@@ -61,7 +61,6 @@ function sendEmail() {
 }
 
 $(document).ready(function () {
-  $("#add-guide-modal").show();
   $(".guide-object").click(function () {
     var link = $(this).attr("value");
     window.location.href = link;
