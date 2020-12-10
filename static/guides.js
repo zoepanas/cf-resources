@@ -67,9 +67,10 @@ $(document).ready(function () {
   });
 
   $("#add-guide-btn").click(function () {
-    console.log("showing");
+    console.log("add overlay");
+    $(".gray-overlay").show();
     $("#add-guide-modal").show();
-    $(".main-body").addClass("is-faded");
+    //$("body").addClass("overlay");
   });
 
   $("#submit-guide-btn").click(function () {
@@ -88,10 +89,7 @@ $(document).ready(function () {
 
   $("#got-it-btn").click(function () {
     $("#guide-submitted-modal").hide();
-  });
-
-  $(window).click(function () {
-    $("add-guide-modal").hide();
+    $(".gray-overlay").hide();
   });
 
   $("#most-recent-guides").click(function () {
