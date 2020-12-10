@@ -10,7 +10,7 @@ guides = [
     {
         "id": 1,
         "title": "Community Fridge 'How To' Guide",
-        "image": "https://ucccc7634a5c9c880157ae5e4a21.previews.dropboxusercontent.com/p/pdf_img/ABApa4w9Mn8FWjM_McfC6DoKIuya8fa--Vt7-eOZMFgW_uiTMR2G6TS9XUIVJ-haHDBGP6Zuk2yRZESIvYQERmYZ_d3qIo5Kg5vPWw0jFYCC9F_rWzvMMKgRnB2jWlp1qClp0ZW6V5FGUMIB8MA_fA7_k4eKQ-YS9CtfHw_TogOJ3m3oTKGO7CvGYRANu1jrHeMJthBF9fSj2ZpMtZLCp6DbT8RM1qiJdEfR5N0PH0oK-rL4Qul08SPxUyiMs75b-cSkP0SqkJrcGp3aPQGjgpM1FqWV-XPgieAqXP9Kr8BpKoAB0s1El-AaCCUGt7DvwB4XhziiuG_4BalEgEo3xHT4bRReQdkQ_7PG17xYmliruT6R23FhoObBv_NqtUrvRbRiDi_reOIDc9QjyMnqBfinSm0U7oCJeGM1Ub2mymTspT_70fZi873zRGtrHGM_UnuPkP1fwcxA3aE2f1mXNcf-C8j25UIlxbP5XUce0a0HEJVgwhk2j2WOCF0rW5B6tGM1S6xd9u0oBeG7uiAVfYEs8dKcIKun58zfXxCOSh1Ph6MHfkP6xut_5qI9C11t9t9dCh3TbGIhFLSmhTFdfozYD2eisijnEjqJNST_bQNBk09LQbUchNa3kicJrb2bPzV-5pn5ltT8b-vDdDsxXvZt1CPnT6DXhIwtqaBm9bXBJcovnrIUHlSYnY3hhW_nHevCFU1q6Kf18YZfDb56JfzMlXgw5iFSgjKMbsd1eTmgLGCzInL28nJV5haeZezPBlysG9bt3afYabInZm6xHTRTbJCEOhxcJVaIr2NRM1uhiyB_3GYGQnQyfLFXoYPg9Rs/p.png?page=0&scale_percent=0",
+        "image": "https://image.isu.pub/180918163011-723d5e117aae433502cad3a24b38b012/jpg/page_1.jpg",
         "link": "https://www.dropbox.com/sh/99k56d92o1elqqr/AAA1arRM_mAFZpks8nEQKv3oa/1.%20HOW%20TO%20GUIDE?dl=0&preview=Community+fridge_how+to+guide_print_2019.pdf&subfolder_nav_tracking=1",
         "name": "Hubbub",
         "email": "starter-guide",
@@ -135,11 +135,14 @@ def search_guides(term=None):
 
     # loop through guides to see which contain keyword in title and add these to results
     for g in guides:
+        g_title = (g["title"].lower())
         g_name = (g["name"].lower())
         id = str(g["id"])
+        print(g_name)
 
-        if term in g_name:
+        if term in g_name or term in g_title:
             results.append(g)
+            print("added!")
 
     return render_template('guides.html', guides=results)
 
