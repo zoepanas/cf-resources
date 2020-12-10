@@ -63,14 +63,21 @@ function sendEmail() {
 $(document).ready(function () {
   $(".guide-object").click(function () {
     var link = $(this).attr("value");
-    window.location.href = link;
+    var view_link = window.open(link);
+
+    if (view_link) {
+      //Browser has allowed it to be opened
+      view_link.focus();
+    } else {
+      //Browser has blocked it
+      alert("Please allow popups for this website");
+    }
   });
 
   $("#add-guide-btn").click(function () {
     console.log("add overlay");
     $(".gray-overlay").show();
     $("#add-guide-modal").show();
-    //$("body").addClass("overlay");
   });
 
   $("#submit-guide-btn").click(function () {
