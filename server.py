@@ -138,11 +138,9 @@ def search_guides(term=None):
         g_title = (g["title"].lower())
         g_name = (g["name"].lower())
         id = str(g["id"])
-        print(g_name)
 
         if term in g_name or term in g_title:
             results.append(g)
-            print("added!")
 
     return render_template('guides.html', guides=results)
 
